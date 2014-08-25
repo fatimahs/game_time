@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<%= yield %>
+
+<h1><%= @nfl_team %> </h1>
+<hl><%= @leaderboard %></hl>
+
+ <ol>
+<h3>NFL Team </h3>
+<% nfl_team.each do |player| %>
+  <li><%= player[""]%> <%= player["home_score"]%> <b>  Position:  </b><%= player["away_score"]%></li>
+
+ <% end %>
+</ol>
+</body>
+</html>
