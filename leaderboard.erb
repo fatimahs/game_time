@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html>
-<body>
-<%= yield %>
+<table>
+  <thead>
+    <tr>
+      <th>Team name</th>
+      <th>Wins</th>
+      <th>Losses</th>
+    </tr>
+  </thead>
 
-<h1><%= @nfl_team %> </h1>
-<hl><%= @leaderboard %></hl>
-
- <ol>
-<h3>NFL Team </h3>
-<% nfl_team.each do |player| %>
-  <li><%= player[""]%> <%= player["home_score"]%> <b>  Position:  </b><%= player["away_score"]%></li>
-
- <% end %>
-</ol>
-</body>
-</html>
+  <tbody>
+    <% @team_records.each do |team_name,scores| %>
+      <tr>
+        <td><%= team_name %></td>
+        <td><%= scores[:wins] %></td>
+        <td><%= scores[:losses] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
